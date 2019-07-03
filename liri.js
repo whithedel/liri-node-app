@@ -33,9 +33,6 @@ function parseArguments(command, commandInput){
         search.BandsInTown(commandInput)
     }
     else if (command === `spotify-this-song`){
-        // if(commandInput === ''){
-        //     commandInput = `The Sign`
-        // }
         search.spotify(commandInput)
     }
     else if (command === `movie-this`){
@@ -46,9 +43,5 @@ function parseArguments(command, commandInput){
     }
     else if (command === `do-what-it-says`){
         fileSearch.doWhatItSays(command,commandInput)
-            if (command ===  `spotify-this-song`){
-                console.log(command,commandInput)
-                search.spotify(commandInput)
-            }
     }
 }
