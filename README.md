@@ -43,11 +43,11 @@ https://www.npmjs.com/package/colors
 ## 2 - run `npm install` 
 
 ## 3 - Make a JavaScript file named keys.js. although it isnt required. It's a good way to store keys in private file such as a .env file.
-..* Inside keys.js your file will look like this
-```exports.THEAPI = {
-  id: process.env.THEAPI_ID,
-  secret: process.env.THE API_SECRET
-};
+  * Inside keys.js your file will look like this
+``` exports.THEAPI = {
+        id: process.env.THEAPI_ID,
+        secret: process.env.THE API_SECRET
+    };
 ```
 
 ## 4 - create a file named .env, add the following to it, replacing the values with your API keys (no quotes) once you have them
@@ -56,13 +56,16 @@ https://www.npmjs.com/package/colors
 THEAPI_ID=your-API-id
 THEAPI_SECRET=your-API-secret
 ```
-  * This file will be used by the `dotenv` package to set what are known as environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
+   * This file will be used by the `dotenv` package to set what are known as environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
 
-   *If someone wanted to clone your app from github and run it themselves, they would need to supply their own `.env` file for it to work.
+   * If someone wanted to clone your app from github and run it themselves, they would need to supply their own `.env` file for it to work.
 
 ## 5 - Make a file called random.txt
-### .Inside of random.txt put the following in with no extra characters or white space:
-..* spotify-this-song,"I Want it That Way"
+### * Inside of random.txt put the following in with no extra characters or white space:
+   * spotify-this-song,"I Want it That Way"
+   
+
+    
 
 
 
