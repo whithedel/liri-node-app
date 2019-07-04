@@ -24,6 +24,8 @@ This utility allows you to render unicode-aided tables on the command line from 
 ![cli_table](./images/cli_table.png)
 
 
-
+## - colors
+get color and style in your node.js console
+![colors](./images/colors.png)
 
 
