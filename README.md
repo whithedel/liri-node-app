@@ -1,7 +1,7 @@
 # liri-node-app
 #### A simple app that you can pass command (*As if passing a question) to to get a response from one of three diffenrent api which are Spotify API for songs, Bands in Town API for concerts, and OMDB API for movies.. Which would be done through Node with liri in the command line that will take two parameters.
 
-#Tools needed for the APP
+# Tools needed for the APP
 
 ## - Node Spotify API 🚀 🎶
 A simple to use API library for the Spotify REST API.
