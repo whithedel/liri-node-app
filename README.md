@@ -1,6 +1,12 @@
 # liri-node-app
 #### A simple app that you can pass command (*As if passing a question) to to get a response from one of three diffenrent api which are Spotify API for songs, Bands in Town API for concerts, and OMDB API for movies.. Which would be done through Node with liri in the command line that will take two parameters.
 
+![appgift](./images/app.gif)
+![appgift](./images/app1.gif)
+![appgift](./images/app2.gif)
+![appgift](./images/app3.gif)
+
+
 # Tools needed for the APP
 
 ## - Node Spotify API 🚀 🎶
@@ -21,11 +27,13 @@ https://www.npmjs.com/package/dotenv
 
 ## - CLI Table
 This utility allows you to render unicode-aided tables on the command line from your node.js scripts.
+https://www.npmjs.com/package/cli-table
 ![cli_table](./images/cli_table.png)
 
 
 ## - colors
 get color and style in your node.js console
+https://www.npmjs.com/package/colors
 ![colors](./images/colors.png)
 
 

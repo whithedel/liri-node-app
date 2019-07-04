@@ -1,10 +1,12 @@
 var Table = require('cli-table');
 var colors = require('colors');
+//setting up my table as a global variable 
 colors.setTheme({
   info: 'green',
   infoName: 'grey',
   time: 'cyan',
 });
+//axios will help us with the api calls
 var axios = require('axios');
 var Spotify = require('node-spotify-api');
 var moment = require('moment');
@@ -18,6 +20,7 @@ var fs = require(`fs`);
 var readData = require('./log')
 
 var dataToBeLogged = ''
+//object construtor of all my api call in which we will log result to log.txt and renders it to the console
 var Search = function () {
   this.spotify = function (song) {
     var spotify = new Spotify(keys.spotify)
@@ -29,26 +32,30 @@ var Search = function () {
 
         var songInfos = data.tracks.items;
         songInfos.forEach(function (data, index) {
-          var table = new Table({
-            chars: {
-              'top': '═', 'top-mid': '╤', 'top-left': '╔', 'top-right': '╗'
-              , 'bottom': '═', 'bottom-mid': '╧', 'bottom-left': '╚', 'bottom-right': '╝'
-              , 'left': '║', 'left-mid': '╟', 'mid': '─', 'mid-mid': '┼'
-              , 'right': '║', 'right-mid': '╢', 'middle': '│'
-            }
-          });
-          table.push(
-            [`Artist(s)`.infoName, data.artists[0].name.info],
-            [`The song's name`.infoName, data.name.info],
-            [`A preview link of the song from Spotify`.infoName, data.external_urls.spotify.info],
-            [`The album that the song is from`.infoName, data.album.name.info],
-          );
-          dataToBeLoggedFormatted = table.toString()
-          dataToBeLogged = `${separator}\nArtist(s): ${data.artists[0].name}
+          // console.log(data)
+          if (data.artists[0].name === `Ace of Base` && data.name === `The Sign`) {
+            var table = new Table({
+              chars: {
+                'top': '═', 'top-mid': '╤', 'top-left': '╔', 'top-right': '╗'
+                , 'bottom': '═', 'bottom-mid': '╧', 'bottom-left': '╚', 'bottom-right': '╝'
+                , 'left': '║', 'left-mid': '╟', 'mid': '─', 'mid-mid': '┼'
+                , 'right': '║', 'right-mid': '╢', 'middle': '│'
+              }
+            });
+            table.push(
+              [`Artist(s)`.infoName, data.artists[0].name.info],
+              [`The song's name`.infoName, data.name.info],
+              [`A preview link of the song from Spotify`.infoName, data.external_urls.spotify.info],
+              [`The album that the song is from`.infoName, data.album.name.info],
+            );
+            dataToBeLoggedFormatted = table.toString()
+            dataToBeLogged = `${separator}\nArtist(s): ${data.artists[0].name}
                       \nThe song's name: ${data.name}
                       \nA preview link of the song from Spotify: ${data.external_urls.spotify}
                       \nThe album that the song is from: ${data.album.name}\n\n`
-          readData(dataToBeLogged, dataToBeLoggedFormatted)
+            readData(dataToBeLogged, dataToBeLoggedFormatted)
+          }
+
         })
       })
 
@@ -57,6 +64,7 @@ var Search = function () {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
+
         var songInfos = data.tracks.items;
         songInfos.forEach(function (data, index) {
           var table = new Table({
@@ -67,6 +75,7 @@ var Search = function () {
               , 'right': '║', 'right-mid': '╢', 'middle': '│'
             }
           });
+          
           table.push(
             [`Artist(s)`.infoName, data.artists[0].name.info],
             [`The song's name`.infoName, data.name.info],
@@ -197,6 +206,8 @@ var Search = function () {
 
 
 };
+
+//separate function that parse throught the random.txt file to get the command and command input 
 var doWhatItSays = function () {
   var searchFile = new Search()
   this.doWhatItSays = function (command, commandInput) {
@@ -215,6 +226,7 @@ var doWhatItSays = function () {
   }
 }
 
+//export both of my object construtor 
 module.exports = {
   search: Search,
   fileSearch: doWhatItSays
