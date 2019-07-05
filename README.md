@@ -1,6 +1,7 @@
 # liri-node-app
 #### A simple app that you can pass command (*As if passing a question) to to get a response from one of three diffenrent api which are Spotify API for songs, Bands in Town API for concerts, and OMDB API for movies.. Which would be done through Node with liri in the command line that will take two parameters.
 
+
 ![appgift](./images/app.gif)
 ![appgift](./images/app1.gif)
 ![appgift](./images/app2.gif)
@@ -63,7 +64,7 @@ THEAPI_SECRET=your-API-secret
 ## 5 - Make a file called random.txt
 ### * Inside of random.txt put the following in with no extra characters or white space:
    * spotify-this-song,"I Want it That Way"
-   
+
 
     
 
