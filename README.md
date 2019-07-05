@@ -3,9 +3,9 @@
 
 
 ![appgift](./images/app.gif)
-![appgift](./images/app1.gif)
-![appgift](./images/app2.gif)
-![appgift](./images/app3.gif)
+![appgift1](./images/app1.gif)
+![appgift2](./images/app2.gif)
+![appgift3](./images/app3.gif)
 
 
 # Tools needed for the APP
